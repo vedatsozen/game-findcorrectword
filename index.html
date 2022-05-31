@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GAME / FIND THE CORRECT WORD</title>
+</head>
+<body>
+
+    <div id="wordsarehere"></div>
+
+    <h1>GAME / FIND THE CORRECT WORD / GOOD LUCK </h1>
+    <div id="container">
+            <div id="first" class="box"></div>
+            <div id="second" class="box"></div>
+            <div id="third" class="box"></div>
+            <div id="forth" class="box"></div>
+            <div id="fifth" class="box"></div>
+    </div>
+
+<button type="button" onclick="chooseaword()">START NEW GAME</button>
+
+<button type="button" onclick="correctword()">WRITE CORRECT WORD</button>
+
+</body>
+
+<script>
+
+const words = ["TABLE","HOUSE","EAGLE","QUEEN","BLACK","CLOCK","BRAIN"] ;
+
+const chosenword = words[Math.round( Math.random() * 6 )];
+
+setInterval(myfunc,150);
+
+function myfunc() {
+
+    const chosenword = words[Math.round( Math.random() * 6 )];
+    document.getElementById("wordsarehere").innerHTML = chosenword;
+}
+
+
+// START GAME
+
+function chooseaword() {
+
+document.getElementById("first").innerHTML = "" ;
+document.getElementById("second").innerHTML = "";
+document.getElementById("third").innerHTML = "";
+document.getElementById("forth").innerHTML = "";
+document.getElementById("fifth").innerHTML = "";
+document.getElementById("first").style.backgroundColor = "firebrick";
+document.getElementById("second").style.backgroundColor = "firebrick";
+document.getElementById("third").style.backgroundColor = "firebrick";
+document.getElementById("fifth").style.backgroundColor = "firebrick";
+document.getElementById("forth").style.backgroundColor = "firebrick";
+
+
+
+alert("RANDOM WORD WAS CHOSEN");
+
+// CHOOSE FIRST WORD
+
+const firstword = prompt("Enter first word");
+
+if ( firstword == chosenword[0] ) 
+
+{ 
+    
+    document.getElementById("first").innerHTML = firstword;
+    
+
+}
+
+else { 
+    
+alert("You couldn't find correct word."); 
+document.getElementById("first").style.backgroundColor = "black";
+
+}
+
+// CHOOSE SECOND WORD
+
+const secondword = prompt("Enter second word");
+
+if ( secondword == chosenword[1] )
+
+{ document.getElementById("second").innerHTML = secondword; }
+
+else { alert("You couldn't find correct word.");
+document.getElementById("second").style.backgroundColor = "black";
+}
+
+// CHOOSE THIRD WORD
+
+const thirdword = prompt("Enter third word");
+
+if ( thirdword == chosenword[2] )
+
+{ document.getElementById("third").innerHTML = thirdword; }
+
+else { alert("You couldn't find correct word."); 
+document.getElementById("third").style.backgroundColor = "black";
+}
+
+// CHOOSE FORTH WORD
+
+const forthword = prompt("Enter forth word.");
+
+if ( forthword == chosenword[3] )
+
+{ document.getElementById("forth").innerHTML = forthword; }
+
+else { alert("You couldn't find correct word.");
+document.getElementById("forth").style.backgroundColor = "black";
+}
+
+// CHOOSE FIFTH WORD
+
+const fifthword = prompt("Enter fifth word.");
+
+if ( fifthword == chosenword[4] )
+
+{ document.getElementById("fifth").innerHTML = fifthword; }
+
+else { alert("You couldn't find correct word.");
+document.getElementById("fifth").style.backgroundColor = "black";
+}
+
+}
+
+// WRITE WHOLE WORD
+
+function correctword() {
+
+const correctword = prompt("Please write correct word ( CAPITAL LETTER PLEASE ) ");
+
+if ( correctword == chosenword ) {
+
+document.getElementById("first").innerHTML = chosenword[0];
+document.getElementById("second").innerHTML = chosenword[1];
+document.getElementById("third").innerHTML = chosenword[2];
+document.getElementById("forth").innerHTML = chosenword[3];
+document.getElementById("fifth").innerHTML = chosenword[4];
+document.getElementById("first").style.backgroundColor = "firebrick";
+document.getElementById("second").style.backgroundColor = "firebrick";
+document.getElementById("third").style.backgroundColor = "firebrick";
+document.getElementById("fifth").style.backgroundColor = "firebrick";
+document.getElementById("forth").style.backgroundColor = "firebrick";
+
+alert("CONGRATULATIONS !!! YOU WON !!! ")
+
+}
+
+else { alert("Unfortunately You lost this game :( Start Again")}
+
+}
+
+
+
+/*
+const ikincisessizharf = prompt("2. sessiz harfi girin");
+const ucuncusessizharf = prompt("3. sessiz harfi girin");
+const dorduncusessizharf = prompt("4. sessiz harfi girin");
+const sesliharf = prompt("Sesli harfi girin");
+*/
+
+</script>
+</html>
+
